@@ -1,0 +1,750 @@
+[
+  {
+    "contract_title": "LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Governing Law clause is missing"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing, which poses a HIGH RISK."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Cap on Liability' clause, which poses a high risk as it may lead to uncapped or unlimited liability."
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      }
+    ]
+  },
+  {
+    "contract_title": "WHITESMOKE,INC_11_08_2011-EX-10.26-PROMOTION AND DISTRIBUTION AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": true,
+        "extracted_text": "11.10 Governing Law. This Agreement is governed by English law and the parties submit to the exclusive jurisdiction of the English courts in relation to any dispute (contractual or non-contractual) concerning this Agreement save that either party may apply to any court for an injunction or other relief to protect its Intellectual Property Rights.",
+        "risk_flag": false,
+        "risk_reason": "None"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing"
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": true,
+        "extracted_text": "9.4 Subject to Clauses 9.1 and 9.2, each party's total liability under or in connection with this Agreement (whether in contract, tort or otherwise) arising in any Contract Year is limited to the greater of: (a) [ * ] Euros ([ * ] Euros); and (b) [ * ]% of the total payment due to the Distributor in the relevant Contract Year pursuant to Clause 4 (Payment Terms).",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Minimum Commitment clause is missing"
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": true,
+        "extracted_text": "(d) Records and Audit Rights. Distributor will keep and maintain complete and accurate books, records, and accounts relating to  this Agreement. During the Term, and for a period of [ * ] thereafter, Google may audit Distributor's relevant records to confirm  Distributor's compliance with this Agreement. Google's auditor will only have access to those books and records of Distributor  which are reasonably necessary to confirm such compliance.",
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": true,
+        "extracted_text": "6. CONFIDENTIAL INFORMATION ... 6.1 In this Agreement, \"Confidential Information\" means information disclosed by (or on behalf of) one party to the other party under this Agreement that is marked as confidential or, from its nature, content or the circumstances in which it is disclosed, might reasonably be supposed to be confidential, including the terms and conditions (including the Exhibits) of this Agreement.",
+        "risk_flag": false,
+        "risk_reason": null
+      }
+    ]
+  },
+  {
+    "contract_title": "LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing"
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Minimum Commitment clause is missing, which may pose a risk to the parties involved in the contract."
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      }
+    ]
+  },
+  {
+    "contract_title": "CENTRACKINTERNATIONALINC_10_29_1999-EX-10.3-WEB SITE HOSTING AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": true,
+        "extracted_text": "This Agreement was entered into in the State of Florida, and its validity, construction, interpretation, and legal effect shall be governed by the laws and judicial decisions of the State of Florida applicable to contracts entered into and performed entirely within the State of Florida.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": true,
+        "extracted_text": "Either party may terminate this Agreement without cause at any time effective upon thirty (30) days' written notice.",
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": true,
+        "extracted_text": "i-on's liability for damages to the Customer for any cause whatsoever, regardless of the form of action, and whether in contract or in tort, including negligence, shall be limited to one (1) month's fees and the remaining portion of any prepaid fees.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Minimum Commitment' clause, which may pose a risk to the parties involved."
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Confidentiality clause is missing."
+      }
+    ]
+  },
+  {
+    "contract_title": "NELNETINC_04_08_2020-EX-1-JOINT FILING AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Governing Law clause is missing"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Cap on Liability' clause, posing a high risk due to potential uncapped liability."
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Confidentiality clause is missing"
+      }
+    ]
+  },
+  {
+    "contract_title": "ADAMSGOLFINC_03_21_2005-EX-10.17-ENDORSEMENT AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": true,
+        "extracted_text": "This Agreement shall be governed and construed according to the laws of the State of Kansas.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing, which poses a HIGH RISK."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Cap on Liability' clause, which poses a high risk as it may result in uncapped or unlimited liability."
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": true,
+        "extracted_text": "During the term of this Agreement, CONSULTANT shall exclusively play/use the MANDATORY PRODUCT.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": true,
+        "extracted_text": "Both parties understand that the contents of this Agreement, including, but not limited to, all amounts paid or to be paid and any additional consideration, are extremely confidential, and that disclosure of same to any third party could be detrimental to the interests of one or both parties. Therefore, both parties agree not to disclose the terms of this Agreement, without the permission of the other party, to any third party other than to CONSULTANT'S business, legal and financial advisors, and with respect to all such advisors, CONSULTANT shall take all reasonable steps to ensure such confidentiality to ADAMS GOLF.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      }
+    ]
+  },
+  {
+    "contract_title": "KIROMICBIOPHARMA,INC_05_11_2020-EX-10.23-CONSULTING AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": true,
+        "extracted_text": "This Agreement shall be governed by the laws of the State of Texas, without reference to its conflicts of law principles.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing, which poses a HIGH RISK."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context snippet does not contain a 'Cap on Liability' clause, which poses a high risk as it may leave the parties involved with uncapped or unlimited liability."
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      }
+    ]
+  },
+  {
+    "contract_title": "VEONEER,INC_02_21_2020-EX-10.11-JOINT VENTURE AGREEMENT",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Termination for Convenience' clause, which poses a HIGH RISK as it is a crucial provision that allows for termination without cause or penalty."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Cap on Liability' clause, which poses a high risk as it may result in uncapped or unlimited liability."
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Missing IP Ownership Assignment clause, which is a HIGH RISK as it may lead to disputes over intellectual property rights."
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Confidentiality clause is missing."
+      }
+    ]
+  },
+  {
+    "contract_title": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Governing Law clause is missing"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": true,
+        "extracted_text": "7.3 Dova Rights. Dova shall have the right, at its own expense, during normal business hours and upon reasonable prior notice, through a certified public accounting firm or other auditor selected by Dova and reasonably acceptable to Valeant and upon execution of a confidentiality agreement reasonably satisfactory to Valeant in form and substance, to inspect and audit the applicable records and books maintained by Valeant relating to the Valeant Activities for purposes of verifying Valeant's compliance with the terms of this Agreement",
+        "risk_flag": false,
+        "risk_reason": null
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": true,
+        "extracted_text": "9.1.1 Confidentiality and Non-Use. Each Party agrees that, during the Term and for a period of [***] thereafter, it shall keep confidential and shall not publish or otherwise disclose and shall not use for any purpose other than as provided for in this Agreement (which includes the exercise of its rights or performance of any obligations hereunder) any Confidential Information furnished to it by or on behalf of the other Party pursuant to this Agreement",
+        "risk_flag": false,
+        "risk_reason": null
+      }
+    ]
+  },
+  {
+    "contract_title": "PACIRA PHARMACEUTICALS, INC. - A_R STRATEGIC LICENSING, DISTRIBUTION AND MARKETING AGREEMENT ",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "Termination for convenience clause is missing."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain an IP Ownership Assignment clause, which is a high-risk factor as it leaves uncertainty about the ownership of intellectual property."
+      },
+      {
+        "category_name": "Revenue/Profit Sharing",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Minimum Commitment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Audit Rights",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Exclusivity",
+        "exists": false,
+        "extracted_text": null,
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Confidentiality",
+        "exists": true,
+        "extracted_text": "11.2 Third Party Disclosure. Any Confidential Information received from the other Party shall not be disclosed to any Third Party or used for  any purpose other than as provided or specifically envisaged by this Agreement or as required in connection with any securities offering,  financing, merger, acquisition or other corporate transaction involving such Party provided that any Party to whom such disclosure is made  is bound by obligations as to confidentiality that are at least as protective of Confidential Information as those contained herein.",
+        "risk_flag": false,
+        "risk_reason": null
+      }
+    ]
+  },
+  {
+    "contract_title": "MetLife, Inc. - Remarketing Agreement",
+    "clauses": [
+      {
+        "category_name": "Governing Law",
+        "exists": true,
+        "extracted_text": "15. GOVERNING LAW. THIS REMARKETING AGREEMENT AND THE PRICING AGREEMENT SHALL BE GOVERNED BY AND CONSTRUED IN ACCORDANCE WITH THE LAWS OF THE STATE OF NEW YORK, WITHOUT REGARD TO PRINCIPLES OF CONFLICTS OF LAW TO THE EXTENT THAT SUCH PRINCIPLES WOULD REQUIRE OR PERMIT THE APPLICATION OF LAWS OF ANOTHER JURISDICTION.",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "Termination for Convenience",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Termination for Convenience' clause, which poses a HIGH RISK as it is a crucial provision that allows for the termination of a contract without cause or penalty."
+      },
+      {
+        "category_name": "Cap on Liability",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": true,
+        "risk_reason": "The provided context does not contain a 'Cap on Liability' clause, which poses a high risk as it may result in uncapped liability."
+      },
+      {
+        "category_name": "Non-Compete",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      },
+      {
+        "category_name": "IP Ownership Assignment",
+        "exists": false,
+        "extracted_text": "null",
+        "risk_flag": false,
+        "risk_reason": "null"
+      }
+    ]
+  }
+]

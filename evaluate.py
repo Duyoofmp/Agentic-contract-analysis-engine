@@ -11,7 +11,7 @@ def load_data():
     return cuad_gt, our_preds
 
 def evaluate():
-    print("🔍 Booting Ground-Truth Evaluation Matrix against expert CUAD Annotations...")
+    print("[SEARCH] Booting Ground-Truth Evaluation Matrix against expert CUAD Annotations...")
     cuad_gt, our_preds = load_data()
     
     # Map ground truth by Document Title
@@ -97,7 +97,7 @@ def evaluate():
     macro_r = total_tp / (total_tp + total_fn) if (total_tp+total_fn) > 0 else 0
     
     print("\n" + "="*80)
-    print("🏆 EXPERT GROUND TRUTH EVALUATION METRICS (CUAD v1)")
+    print("[GOLD] EXPERT GROUND TRUTH EVALUATION METRICS (CUAD v1)")
     print("="*80)
     print(df.to_string(index=False))
     print("-" * 80)

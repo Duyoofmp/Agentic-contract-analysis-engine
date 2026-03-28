@@ -70,10 +70,18 @@ def main():
         encode_kwargs={'normalize_embeddings': True}
     )
     
-    groq_key = os.getenv("GROQ_API_KEY", "")
+    GROQ_KEYS = [
+        os.getenv("GROQ_API_KEY", ""),
+        os.getenv("GROQ_API_KEY_2", "")
+    ]
+    # Filter out empty strings if any key is missing in .env
+    GROQ_KEYS = [k for k in GROQ_KEYS if k]
+    current_key_idx = 0
     
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0, api_key=groq_key)
-    structured_llm = llm.with_structured_output(Clause)
+    def get_llm(key):
+        return ChatGroq(model="llama-3.3-70b-versatile", temperature=0, api_key=key).with_structured_output(Clause)
+
+    structured_llm = get_llm(GROQ_KEYS[current_key_idx])
     
     # 2. Load dataset
     with open("CUADv1.json", "r", encoding="utf-8") as f:
@@ -122,11 +130,11 @@ def main():
             collection_name=f"contract_{i}"
         )
         
-        retriever = ephemeral_qdrant.as_retriever(search_kwargs={"k": 3})
+        retriever = ephemeral_qdrant.as_retriever(search_kwargs={"k": 4}) # Increased k for higher recall
         
         extracted_clauses = []
         for clause_name in clauses_to_find:
-            # We search the ephemeral vector memory for only the most relevant 3 paragraphs!
+            # We search the ephemeral vector memory for only the most relevant paragraphs!
             relevant_docs = retriever.invoke(f"Find the clause regarding: {clause_name}")
             small_context = "\n\n".join([d.page_content for d in relevant_docs])
             
@@ -134,44 +142,40 @@ def main():
             You are an expert legal AI.
             Analyze ONLY the provided small context snippets, and determine if it strictly contains a '{clause_name}' clause.
             Determine if it exists, provide the exact matched text snippet, and flag it for risk if necessary. 
-            Risk Flag Guidelines: 
-            - Cap on liability is HIGH RISK if missing or "uncapped". 
-            - Termination for convenience is HIGH RISK if missing. 
-            - Confidentiality is HIGH RISK if missing.
             
             Context:
             {small_context}
             """
             
-            try:
-                # 1. Junior Agent Extraction pass
-                clause_data: Clause = structured_llm.invoke(prompt)
-                c_dict = clause_data.dict()
-                c_dict["category_name"] = clause_name
-                
-                # Hard-parse Pydantic string bugs back into Boolean for matrix stability
-                for k in ["exists", "risk_flag"]:
-                    v = c_dict.get(k)
-                    if isinstance(v, str):
-                        c_dict[k] = v.lower() == 'true'
-                
-                # 2. Judge Agent Verification pass (High-Accuracy Polish)
-                if c_dict.get("exists") and c_dict.get("extracted_text"):
-                    judge_prompt = f"Review this text snippet: '{c_dict['extracted_text']}'. Is this strictly a legally binding '{clause_name}' clause? Answer ONLY True or False."
-                    decision = llm.invoke(judge_prompt).content.strip().lower()
+            success = False
+            while not success:
+                try:
+                    clause_data: Clause = structured_llm.invoke(prompt)
+                    c_dict = clause_data.dict()
+                    c_dict["category_name"] = clause_name
                     
-                    if "false" in decision:
-                        print(f"      ⚖️  Judge Vetoed: {clause_name} (determined to be a generic/false mention)")
-                        c_dict["exists"] = False
-                        c_dict["extracted_text"] = None
+                    # Hard-parse Pydantic string bugs back into Boolean
+                    for k in ["exists", "risk_flag"]:
+                        v = c_dict.get(k)
+                        if isinstance(v, str):
+                            c_dict[k] = v.lower() == 'true'
+                    
+                    if c_dict.get("exists"):
+                        print(f"      ✅ Extracted {clause_name}")
                     else:
-                        print(f"      ✅ Agent + Judge agreed on {clause_name}")
-                else:
-                    print(f"      🔍 {clause_name}: Not found in retrieved snippets.")
-                    
-                extracted_clauses.append(c_dict)
-            except Exception as e:
-                print(f"      ❌ Extraction Error on {clause_name}: {e}")
+                        print(f"      🔍 {clause_name}: Not found.")
+                        
+                    extracted_clauses.append(c_dict)
+                    success = True
+                except Exception as e:
+                    if "429" in str(e) or "limit" in str(e).lower():
+                        current_key_idx = (current_key_idx + 1) % len(GROQ_KEYS)
+                        print(f"      🔄 Rate Limit hit! Swapping to Key {current_key_idx+1}...")
+                        structured_llm = get_llm(GROQ_KEYS[current_key_idx])
+                    else:
+                        print(f"      ❌ Extraction Error on {clause_name}: {e}")
+                        extracted_clauses.append({"category_name": clause_name, "exists": False, "extracted_text": None})
+                        success = True
                 
         # Save to results
         results.append({
@@ -183,8 +187,7 @@ def main():
         with open(db_path, "w", encoding='utf-8') as f:
             json.dump(results, f, indent=2)
             
-        print(f"      ✅ Successfully extracted all 10 clauses efficiently using Groq + BGE RAE!")
-        time.sleep(1) # Prevent any API spam blocks
+        print(f"      🏁 [{title}] Complete!")
         
     print("\n🎉 Agentic Retrieval-Augmented Extraction complete!")
 

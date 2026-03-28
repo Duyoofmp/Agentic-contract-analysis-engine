@@ -75,9 +75,12 @@ st.markdown("""
     }
     .stMetric {
         background-color: #16213e;
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 10px;
         border: 1px solid #1f4068;
+    }
+    .stMetric label, .stMetric div[data-testid="stMetricValue"], .stMetric div[data-testid="stMetricDelta"] {
+        color: white !important;
     }
 </style>
 """, unsafe_allow_html=True)
