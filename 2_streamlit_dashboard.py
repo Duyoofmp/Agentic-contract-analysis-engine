@@ -53,7 +53,7 @@ load_dotenv()
 
 st.set_page_config(page_title="Agentic Contract Engine", layout="wide")
 st.title("⚖️ Agentic Contract Analysis Engine")
-st.markdown("A 1-Day AI Proof-of-Concept for batch legal extraction and semantic cross-comparison built with Gemini 2.5 and Qdrant.")
+st.markdown("A High-Performance Agentic RAG System for batch legal extraction and semantic analysis built with Llama 3.3 (Groq) and Local BGE Embeddings.")
 
 @st.cache_data
 def load_data():

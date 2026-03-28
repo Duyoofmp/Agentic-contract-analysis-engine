@@ -95,9 +95,6 @@ def main():
         try:
             with open(db_path, "r", encoding="utf-8") as f:
                 results = json.load(f)
-            # The first 11 were famously perfect Gemini extractions. Drop the 7 buggy Groq ones so we overwrite them!
-            if len(results) > 11:
-                results = results[:11]
         except Exception:
             pass
             
