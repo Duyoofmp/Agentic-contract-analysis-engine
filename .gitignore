@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+.DS_Store
+local_qdrant_db/
+bge_qdrant_db/
+CUADv1.json
+extracted_clauses.json
