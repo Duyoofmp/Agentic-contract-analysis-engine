@@ -1,83 +1,77 @@
 # ⚖️ Agentic Contract Analysis Engine (Hirethon Project)
 
-A high-performance system designed for batch processing legal contracts, clause extraction, cross-contract comparison, and risk analysis using the CUAD (Contract Understanding Atticus Dataset).
+A high-performance Agentic RAG system designed for batch processing legal contracts, automated clause extraction, and semantic risk analysis using the CUAD (Contract Understanding Atticus Dataset).
 
 ## 🚀 Quick Start Guide
 
-### 1. Prerequisite Setup
-Ensure you have Python 3.10+ installed and a Groq API Key (Free at [console.groq.com](https://console.groq.com)).
+### 1. Prerequisites
+- Python 3.10+
+- Groq API Key (Free at [console.groq.com](https://console.groq.com))
+- 2GB RAM (Local BGE Model is lightweight)
 
 ```bash
-# Install dependencies
+# Install core dependencies
 pip install langchain langchain-groq langchain-qdrant langchain-huggingface pydantic pandas streamlit sentence-transformers torch
 ```
 
-### 2. Environment Configuration
-Create a `.env` file in the root directory:
+### 2. Configuration
+Create a `.env` file in the root:
 ```env
-GROQ_API_KEY=your_gsk_key_here
+GROQ_API_KEY=your_key_here
 ```
 
-### 3. Execution Pipeline
-
-1.  **Run Extraction**: Process 20 contracts and extract 10 clause categories.
+### 3. Usage
+1.  **Extraction Engine**: Analyze 20 contracts and extract 10 key legal clauses.
     ```bash
-    python 1_agentic_extractor.py
+    python main.py
     ```
-2.  **Launch Dashboard**: View the Matrix, Risk Flags, and use the Q&A Copilot.
+2.  **Interactive Dashboard**: View the comparison matrix and use the RAG Copilot.
     ```bash
-    streamlit run 2_streamlit_dashboard.py
+    streamlit run app.py
     ```
-3.  **Benchmark Accuracy**: Run the Ground-Truth evaluation against expert CUAD annotations.
+3.  **Performance Evaluation**: Benchmark results against expert CUAD annotations.
     ```bash
-    python 3_evaluate_cuad_metrics.py
+    python evaluate.py
     ```
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ Architecture: Retrieval-Augmented Extraction (RAE)
 
-The system uses a **Retrieval-Augmented Extraction (RAE)** architecture to bypass the "Needle in a Haystack" problem of 80-page legal documents hitting LLM token limits.
+Standard LLMs struggle with 50+ page legal documents due to context window fragmentation. Our **RAE Architecture** solves this by treating extraction as a search problem first.
 
 ```mermaid
 graph TD
-    A[CUAD Raw Dataset] --> B[1. Agentic Extractor]
-    subgraph "RAE Pipeline (Retrieval Augmented Extraction)"
+    A[CUAD Dataset] --> B[main.py: RAE Engine]
+    subgraph "The Intelligence Loop"
     B --> C[Recursive Chunking]
     C --> D[Local BGE-Small Embeddings]
-    D --> E[Ephemeral Vector Store]
-    E --> F[Semantic Retrieval per Clause]
-    F --> G[Llama 3.3 @ Groq]
+    D --> E[In-Memory Qdrant Store]
+    E --> F[Semantic Retrieval per Category]
+    F --> G[Llama 3.3-70B Logic]
     end
     G --> H[extracted_clauses.json]
-    H --> I[2. Streamlit UI]
-    H --> J[3. Evaluation Suite]
-    I --> K[Matrix Dashboard]
-    I --> L[Risk Flagging]
-    I --> M[Agentic RAG Copilot]
+    H --> I[app.py: UI Dashboard]
+    H --> J[evaluate.py: Metrics]
 ```
 
 ---
 
-## 💡 Key Design Decisions & Why
+## 💡 Key Design Decisions
 
-1.  **RAE (Retrieval-Augmented Extraction)**: We do NOT send 40,000 words to the LLM. We chunk the document and retrieve the Top 3 relevant paragraphs for each specific clause category.
-    *   *Result*: Reduces input costs by 95% and prevents context-window overflow or rate-limit crashes.
-2.  **Local BGE Embeddings**: We use `BAAI/bge-small-en-v1.5` running locally on the CPU.
-    *   *Result*: Zero latency from external embedding APIs and bypasses corporate SSL/Proxy blocks on Google/OpenAI embedding endpoints.
-3.  **Llama 3.3-70B on Groq**: We utilized the Llama 3.3 versatile model via Groq's LPUs.
-    *   *Result*: Near-instant extraction speeds (sub-second per clause) compared to standard GPT-4/Gemini rates.
-4.  **Automatic Resume Logic**: The extractor saves state after every single contract.
-    *   *Result*: If a network interruption occurs, it skips previously processed work, saving API tokens.
+1.  **Local-First Embeddings**: We use `BAAI/bge-small-en-v1.5` running locally. This ensures zero latency and total data privacy for sensitive legal text.
+2.  **RAE (Retrieval-Augmented Extraction)**: Instead of "feeding the whole book," we retrieve only relevant snippets for each clause. This avoids LLM distractions and stays well within rate limits.
+3.  **Structured Output Validation**: We utilize Pydantic models to force the LLM into a strict JSON schema, ensuring the dashboard comparison matrix never breaks.
+4.  **State Persistence**: The engine saves progress after every contract. If the process is interrupted, it resumes instantly without wasting API tokens.
 
 ---
 
-## ⚠️ Known Limitations & Failure Modes
+## ⚠️ Limitations & Failure Modes
 
-1.  **API Rate Limits**: The Groq Free Tier is limited to 100,000 tokens per day. Processing the full 510-contract dataset requires a production tier key.
-2.  **Table of Contents Interference**: Sometimes the retrieval agent retrieves Table of Contents entries instead of actual clauses. Our system includes a "Logic Filter" to disregard short TOC snippets.
-3.  **Hallucination in Logic**: Some legal clauses are extremely "sparse" (e.g., Governing Law spread across two separate sections). Small chunking may occasionally split these into two contexts.
+1.  **Rate Limits**: The free-tier Groq keys may hit RPM limits during parallel runs. We implemented `time.sleep` and retry logic to mitigate this.
+2.  **Sparse Clauses**: Clauses spread across disparate document sections (e.g., disjointed Governing Law) may sometimes be partially missed by a single retrieval window.
+3.  **Fuzzy Matching**: Evaluation metrics use text-based overlap; occasionally valid extractions might be penalized if the expert annotation used slightly different boundaries.
 
 ---
-**Project built for the Agentic Contract Engine Hirethon.**
+**Project Submission for the Agentic AI Hirethon.**
 **Developer: DuyoofMP**

@@ -144,18 +144,34 @@ def main():
             """
             
             try:
-                # Groq blazes through this tiny 500-token prompt instantly! Fully avoiding the 40k token firewall!
+                # 1. Junior Agent Extraction pass
                 clause_data: Clause = structured_llm.invoke(prompt)
                 c_dict = clause_data.dict()
                 c_dict["category_name"] = clause_name
+                
                 # Hard-parse Pydantic string bugs back into Boolean for matrix stability
                 for k in ["exists", "risk_flag"]:
                     v = c_dict.get(k)
                     if isinstance(v, str):
                         c_dict[k] = v.lower() == 'true'
+                
+                # 2. Judge Agent Verification pass (High-Accuracy Polish)
+                if c_dict.get("exists") and c_dict.get("extracted_text"):
+                    judge_prompt = f"Review this text snippet: '{c_dict['extracted_text']}'. Is this strictly a legally binding '{clause_name}' clause? Answer ONLY True or False."
+                    decision = llm.invoke(judge_prompt).content.strip().lower()
+                    
+                    if "false" in decision:
+                        print(f"      ⚖️  Judge Vetoed: {clause_name} (determined to be a generic/false mention)")
+                        c_dict["exists"] = False
+                        c_dict["extracted_text"] = None
+                    else:
+                        print(f"      ✅ Agent + Judge agreed on {clause_name}")
+                else:
+                    print(f"      🔍 {clause_name}: Not found in retrieved snippets.")
+                    
                 extracted_clauses.append(c_dict)
             except Exception as e:
-                print(f"      ❌ Groq failed on {clause_name}: {e}")
+                print(f"      ❌ Extraction Error on {clause_name}: {e}")
                 
         # Save to results
         results.append({

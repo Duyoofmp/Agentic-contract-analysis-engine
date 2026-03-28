@@ -51,19 +51,65 @@ load_dotenv()
 
 # --- STREAMLIT APP ARCHITECTURE ---
 
-st.set_page_config(page_title="Agentic Contract Engine", layout="wide")
-st.title("⚖️ Agentic Contract Analysis Engine")
-st.markdown("A High-Performance Agentic RAG System for batch legal extraction and semantic analysis built with Llama 3.3 (Groq) and Local BGE Embeddings.")
+st.set_page_config(page_title="Agentic Contract Engine", layout="wide", page_icon="⚖️")
+
+# --- CUSTOM CSS FOR PREMIUM LOOK ---
+st.markdown("""
+<style>
+    .main {
+        background-color: #0e1117;
+    }
+    .stHeader {
+        background: linear-gradient(90deg, #1f4068 0%, #16213e 100%);
+        padding: 2rem;
+        border-radius: 10px;
+        color: white;
+    }
+    .stDataFrame {
+        border-radius: 10px;
+    }
+    .stButton>button {
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+    }
+    .stMetric {
+        background-color: #16213e;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid #1f4068;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+with st.container():
+    st.markdown('<div class="stHeader"><h1>⚖️ Agentic Contract Analysis Engine</h1><p>High-Performance Legal Extraction & Semantic Intelligence</p></div>', unsafe_allow_html=True)
+    st.write("")
 
 @st.cache_data
 def load_data():
     try:
+        if not os.path.exists("extracted_clauses.json"):
+             return []
         with open("extracted_clauses.json", "r", encoding="utf-8") as f:
             return json.load(f)
-    except FileNotFoundError:
+    except Exception:
         return []
 
 extracted_data = load_data()
+
+# --- TOP LEVEL METRICS ---
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.metric("Total Documents", len(extracted_data))
+with col2:
+    total_clauses = sum(len(c['clauses']) for c in extracted_data)
+    st.metric("Analyzed Clauses", total_clauses)
+with col3:
+    risks = sum(1 for c in extracted_data for cl in c['clauses'] if cl.get('risk_flag'))
+    st.metric("High Risks Flagged", risks, delta_color="inverse")
+with col4:
+    st.metric("Inference Engine", "Llama 3.3-70B")
 
 @st.cache_resource
 def load_vector_store():
